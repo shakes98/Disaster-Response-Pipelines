@@ -20,9 +20,9 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
 ## File Descriptions
 
 - README.md: read me file
-- \app
+- app
 	- run.py: Flask file that runs the web app
-   	- \templates
+   	- templates
 		- master.html: main page of the web application 
 		- go.html: result web page
 - \data
