@@ -50,13 +50,22 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
 3. Go to http://0.0.0.0:3001/
 
 ## ETL pipeline description
+1. Loads the message.csv and the categories.csv data sets
+2. Merges these two data sets using ID
+3. Splits the categories column into seperate columns
+4. Converts these to binary values
+5. Drops duplicates
+6. Stores this clean data in a SQLite database in a specified file path
 
 ## Machine Learning pipeline description
+1. Loads the cleaned data from the SQLite database from specified path
 
-## Results
 
+In this dataset some labels like water have very few examples (so the dataset is imbalanced). Classifiers tend not to perform that well on unbalanced datasets as they can potentially classify the main class well but at the expence of the smaller classes.  For this imbalance, we want to improve the performance of signle classifier, so we use the Random Forest Classifieer as an ensemble methology technique. MultiOutputClassifier is then used as there is multiple categorical columns. 
+
+## Results & Learnings
+I will try this againn using feature union improve model
 ## Licensing, Authors and Other Acknowledgements
-I must give credit to Bilal Yussef who puplished the data on Kaggle [here](https://www.kaggle.com/bilalyussef/google-books-dataset). All the licensing for the data and other information will be available at that link.
 
 
 
