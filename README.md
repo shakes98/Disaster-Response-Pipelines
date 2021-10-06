@@ -25,13 +25,13 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
    	- templates
 		- master.html: main page of the web application 
 		- go.html: result web page
-- \data
+- data
 	- disaster_categories.csv: dataset containing the categories to which each message belongs
 	- disaster_messages.csv: dataset contaning the messages sent during disaster events
 	- DisasterResponse.db: the exported Sqlite database containing the cleaned data
 	- process_data.py: Python file that runs the ETL pipeline and exports a SQLite database
 	
-- \model
+- model
 	- train_classifier.py: Python file that runs the ML pipeline and exports the model as a pickle file
 	- classifier.pkl: the saved model in a pickle file
 
