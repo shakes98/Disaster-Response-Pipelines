@@ -21,8 +21,8 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
 
 app: 
   - templates
- `  * master.html (main page of the web app)
- `  * go.html (classification page of the web app)
+ `      - master.html (main page of the web app)
+ `      - go.html (classification page of the web app)
   - run.py (Flask file that runs the web app)
 
 data:
