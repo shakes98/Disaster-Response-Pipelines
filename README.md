@@ -20,20 +20,20 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
 ## File Descriptions
 
 app: 
-- templates
- `- master.html (main page of the web app)
- `- go.html (classification page of the web app)
-- run.py (Flask file that runs the web app)
+  - templates
+ `  - master.html (main page of the web app)
+ `  - go.html (classification page of the web app)
+  - run.py (Flask file that runs the web app)
 
 data:
-disaster_categories.csv (dataset contaning the messages sent during disaster events)
-disaster_messages.csv (dataset containing the categories to which each message belongs)
-process_data.py (Python file that runs the ETL pipeline and exports a SQLite database)
-DisasterResponse.db (the exported Sqlite database containing the cleaned data)
+  - disaster_categories.csv (dataset contaning the messages sent during disaster events)
+  - disaster_messages.csv (dataset containing the categories to which each message belongs)
+  - process_data.py (Python file that runs the ETL pipeline and exports a SQLite database)
+  - DisasterResponse.db (the exported Sqlite database containing the cleaned data)
 
 models:
-train_classifier.py (Python file that runs the ML pipeline and exports the model as a pickle file)
-classifier.pkl (the saved model in a pickle file)
+ - train_classifier.py (Python file that runs the ML pipeline and exports the model as a pickle file)
+ - classifier.pkl (the saved model in a pickle file)
 
 ## Instructions
 1. Run the following commands in the project's root directory to set up your database and model.
