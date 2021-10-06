@@ -19,11 +19,12 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
 
 ## File Descriptions
 
-app: 
-  - templates
- `      - master.html (main page of the web app)
- `      - go.html (classification page of the web app)
-  - run.py (Flask file that runs the web app)
+app:
+* Templates
+              * master.html (main page of the web app)
+              * run.py (Flask file that runs the web app)
+                  * Sub-nested bullet etc
+
 
 data:
   - disaster_categories.csv (dataset contaning the messages sent during disaster events)
