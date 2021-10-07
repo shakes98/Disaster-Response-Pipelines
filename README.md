@@ -29,13 +29,13 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
 		- master.html: main page of the web application 
 		- go.html: result web page
 - data
-	- disaster_categories.csv: dataset containing the categories to which each message belongs
-	- disaster_messages.csv: dataset contaning the messages sent during disaster events
-	- DisasterResponse.db: the exported Sqlite database containing the cleaned data
-	- process_data.py: Python file that runs the ETL pipeline and exports a SQLite database
+	- disaster_categories.csv: dataset containing the categories of messages
+	- disaster_messages.csv: dataset contaning the messages sent 
+	- DisasterResponse.db: the exported database uploaded in SQLite. This is the cleaned data
+	- process_data.py: Python file that runs the ETL pipeline. This is the file that exports the SQLite database above.
 	
 - model
-	- train_classifier.py: Python file that runs the ML pipeline and exports the model as a pickle file
+	- train_classifier.py: Python file that runs the ML pipeline. This reads from the SQLite database and will export the file as a pickle
 	- classifier.pkl: the saved model in a pickle file. Running the code will create a pickle file however this file itself was too large to be uploaded to github (https://knowledge.udacity.com/questions/547777)
 
 
@@ -64,11 +64,11 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
 1. Loads the cleaned data from the SQLite database from specified path
 2. Uses the tokenize function to break the text into tokens, replace URLs and lematizes the tokens
 3. Build a model using a pipeline object. This uses CounterVectorizer, TfidfTransformer and MultiOutputClassifier with RandomForestClassifier
-4. Trains the modl using only training data
+4. Trains the model using only training data
 5. Evaluates model on test data
 6. Saves model as a pickle file to be used in the web app
 
-In this dataset some labels like water have very few examples (so the dataset is imbalanced). Classifiers tend not to perform that well on unbalanced datasets as they can potentially classify the main class well but at the expence of the smaller classes.  For this imbalance, we want to improve the performance of signle classifier, so we use the Random Forest Classifieer as an ensemble methology technique. MultiOutputClassifier is then used as there is multiple categorical columns. In future it may be worth using Balanced Random Forest Classifier instead to counteract the inbalance some more to improve the model.
+In this dataset some labels like water have very few examples (so the dataset is imbalanced). Classifiers tend not to perform that well on unbalanced datasets as they can potentially classify the main class well but at the expense of the smaller classes.  For this imbalance, we want to improve the performance of single classifier, so we use the Random Forest Classifieer. MultiOutputClassifier is then used as there is multiple categorical columns. In future it may be worth using Balanced Random Forest Classifier instead to counteract the inbalance some more to improve the model.
 
 ## Results & Learnings
 The result of this is a web app, which can be accessed using the instructions above.
