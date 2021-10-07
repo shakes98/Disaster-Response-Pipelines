@@ -144,7 +144,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
     # Print a classification report for each column 
     for i in range(len(category_names)):
         print("Report for target column: " + category_names[i])
-        print(classification_report(Y_test[category_names[i]], Y_pred[:, i], target_names = ["0","1"]))
+        print(classification_report(Y_test[category_names[i]], Y_pred[:, i]))
 
 
 def save_model(model, model_filepath):
