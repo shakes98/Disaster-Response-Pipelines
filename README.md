@@ -36,7 +36,7 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
 	
 - model
 	- train_classifier.py: Python file that runs the ML pipeline and exports the model as a pickle file
-	- classifier.pkl: the saved model in a pickle file
+	- classifier.pkl: the saved model in a pickle file. Running the code will create a pickle file however this file itself was too large to be uploaded to github (https://knowledge.udacity.com/questions/547777)
 
 
 ## Instructions
