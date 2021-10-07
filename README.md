@@ -18,7 +18,7 @@ Beyond the installation of the Anaconda distribution of python, there should be 
 ## Project Motivation
 For this project, I am going to use software engineering skills and data engineering skills, taught in the Udacity Data Science nanodegree, to analyze disaster data from Figure Eight. This data set contains real messages sent during disasters. 
 
-Specifically, in this project I will clean this data (using an ETL pipeline) then create a machine learning pipeline to categorize these messages into 36 different disaster categorie, so that these messages could be sent to the appropriate disaster response agency. Using this, I will create a web app for an emergency worker to input a message and then get the classification of the message.
+Specifically, in this project I will clean this data (using an ETL pipeline) then create a machine learning pipeline to categorize these messages into 36 different disaster categories, so that these messages could be sent to the appropriate disaster response agency. Using this, I will create a web app for an emergency worker to input a message and then get the classification of the message.
 
 ## File Descriptions
 
@@ -47,7 +47,7 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
     - To run ML pipeline that trains classifier and saves
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
-2. Run the following command in the app's directory to run your web app (should be /home/workspace/app and can get to this by doing cd app).
+2. Run the following command in the app's directory to run your web app (should be /home/workspace/app and can get to this by doing cd app in the terminal).
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
@@ -62,15 +62,21 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
 
 ## Machine Learning pipeline description
 1. Loads the cleaned data from the SQLite database from specified path
+2. Uses the tokenize function to break the text into tokens, replace URLs and lematizes the tokens
+3. Build a model using a pipeline object. This uses CounterVectorizer, TfidfTransformer and MultiOutputClassifier with RandomForestClassifier
+4. Trains the modl using only training data
+5. Evaluates model on test data
+6. Saves model as a pickle file to be used in the web app
 
-
-In this dataset some labels like water have very few examples (so the dataset is imbalanced). Classifiers tend not to perform that well on unbalanced datasets as they can potentially classify the main class well but at the expence of the smaller classes.  For this imbalance, we want to improve the performance of signle classifier, so we use the Random Forest Classifieer as an ensemble methology technique. MultiOutputClassifier is then used as there is multiple categorical columns. 
+In this dataset some labels like water have very few examples (so the dataset is imbalanced). Classifiers tend not to perform that well on unbalanced datasets as they can potentially classify the main class well but at the expence of the smaller classes.  For this imbalance, we want to improve the performance of signle classifier, so we use the Random Forest Classifieer as an ensemble methology technique. MultiOutputClassifier is then used as there is multiple categorical columns. In future it may be worth using Balanced Random Forest Classifier instead to counteract the inbalance some more to improve the model.
 
 ## Results & Learnings
-I will try this againn using feature union improve model
+The result of this is a web app, which can be accessed using the instructions above.
+
 ## Licensing, Authors and Other Acknowledgements
+I'd would like to thank Figure Eight for providing a great data set to practice machine learning and NLP techniques on, in this classification project.
 
-
+I'd also like to thank Udacity and the instructors for the courses on software engineering and data engineering.
 
 
 
