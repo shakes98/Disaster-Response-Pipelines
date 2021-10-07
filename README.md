@@ -6,8 +6,11 @@ This is a repository that will contain all my files for the Udacity Data Science
 1. [Installations Needed](#installations-needed)
 2. [Project Motivation](#project-motivation)
 3. [File Descriptions](#file-descriptions)
-4. [Results of Analysis](#results-of-analysis)
-5. [Licencing, Authors and Other Acknowledgements](#licensing-authors-and-other-acknowledgements)
+4. [Instructions](#instructions)
+5. [ETL Pipeline Description](#etl-pipeline-description)
+6. [Machine Learning Pipeline Description](#machine-learning-pipeline-description)
+7. [Results & Learnings](#results-&-learnings)
+8. [Licencing, Authors and Other Acknowledgements](#licensing-authors-and-other-acknowledgements)
 
 ## Installations Needed
 Beyond the installation of the Anaconda distribution of python, there should be no other necessary libraries needed to run the code. All libraries required will be installed within the python code. There should be no issues running the code when using Python Version 3. The data needed is saved in the github repository along with the code. To write the code, I used a jupyter noteboook and then python files.
@@ -44,7 +47,7 @@ Specifically, in this project I will clean this data (using an ETL pipeline) the
     - To run ML pipeline that trains classifier and saves
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
-2. Run the following command in the app's directory to run your web app (can do this by doing cd app).
+2. Run the following command in the app's directory to run your web app (should be /home/workspace/app and can get to this by doing cd app).
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
