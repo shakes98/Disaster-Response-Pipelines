@@ -1,6 +1,7 @@
 import json
 import plotly
 import pandas as pd
+import numpy as np
 
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
@@ -39,10 +40,10 @@ model = joblib.load("../models/classifier.pkl")
 def index():
     
     # extract data needed for visuals
+
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
-        
     # Show distribution of different category
     #this should take the all columns excluding the first 4 ('id', 'message', 'original', 'genre').
     #so will be just the category names
@@ -52,8 +53,9 @@ def index():
     category_counts = []
     for column_name in category_names:
         category_counts.append(np.sum(df[column_name]))
+
     
-# create visuals
+    # create visuals
     graphs = [
         {
             'data': [
