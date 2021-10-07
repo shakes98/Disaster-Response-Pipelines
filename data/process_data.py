@@ -71,13 +71,13 @@ def clean_data(df):
     for column in categories:
         # set each value to be the last character of the string
         categories[column] = categories[column].str.split("-").str[-1]
+
+        # convert column from string to numeric
+        categories[column] = categories[column].astype(int)
         
     #replaces 2's with 1's:
     categories= categories.replace([2], 1)
         
-    for column in categories:
-        # convert column from string to numeric
-        categories[column] = categories[column].astype(int)
 
         
     #Replace categories column in the df with the new category columns
