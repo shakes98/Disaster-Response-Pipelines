@@ -39,7 +39,8 @@ def clean_data(df):
         2. Rename the columns of 'categories'
         3. Convert category values to just numbers 0 or 1 (booleans)
         4. Replace categories column in df with new category columns
-        5. Remove duplicates
+        5. Drop rows in replaced column that have 2 as a value
+        6. Remove duplicates
 
     INPUT:
     df:  A pandas dataframe
@@ -59,9 +60,10 @@ def clean_data(df):
     #This uses a lambda function that takes everything up to the second
     #to last character of each tring with slicing
     cat_colnames = row.apply(lambda x: x[:-2])
-    
+        
     #rename the column names:
     categories.columns = cat_colnames
+   
     
     #Convert category values to just numbers 0 and 1 (boolean)
     
@@ -69,9 +71,14 @@ def clean_data(df):
     for column in categories:
         # set each value to be the last character of the string
         categories[column] = categories[column].str.split("-").str[-1]
-        # convert column from string format to numeric format
+        
+    #replaces 2's with 1's:
+    categories= categories.replace([2], 1)
+        
+    for column in categories:
+        # convert column from string to numeric
         categories[column] = categories[column].astype(int)
-    
+
         
     #Replace categories column in the df with the new category columns
     
