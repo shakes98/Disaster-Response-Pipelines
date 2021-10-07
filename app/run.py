@@ -39,12 +39,21 @@ model = joblib.load("../models/classifier.pkl")
 def index():
     
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
-    # create visuals
-    # TODO: Below is an example - modify to create your own visuals
+        
+    # Show distribution of different category
+    #this should take the all columns excluding the first 4 ('id', 'message', 'original', 'genre').
+    #so will be just the category names
+    category_names = df.drop(['id', 'message', 'original', 'genre'], axis=1).columns
+    
+    #create a vector of the counts
+    category_counts = []
+    for column_name in category_names:
+        category_counts.append(np.sum(df[column_name]))
+    
+# create visuals
     graphs = [
         {
             'data': [
@@ -63,7 +72,25 @@ def index():
                     'title': "Genre"
                 }
             }
-        }
+        },
+       {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=category_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of Message Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category"
+                }
+            }
+        } 
     ]
     
     # encode plotly graphs in JSON
